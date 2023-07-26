@@ -13,6 +13,4 @@
 
 The linear search algorithm has a time complexity of `O(n) in the worst case`, where `n` is the number of elements in the list. It is suitable for small lists or when the elements are not sorted. However, for large lists, other algorithms like "binary search" are more efficient as they have a lower time complexity.
 
-* ### Code snippets:
-
-https://github.com/Evergreenies/go-algorithms/blob/b4a1cefd51c2172dd90fb99e93880e3e3445de63/algos/searching/001_linear_search.go#L1-L10
+* Code snippets: [Go](https://github.com/Evergreenies/go-algorithms/blob/b4a1cefd51c2172dd90fb99e93880e3e3445de63/algos/searching/001_linear_search.go)
