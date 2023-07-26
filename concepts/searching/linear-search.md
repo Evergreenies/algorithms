@@ -15,4 +15,4 @@ The linear search algorithm has a time complexity of `O(n) in the worst case`, w
 
 * ### Code snippets:
 
-https://github.com/Evergreenies/go-algorithms/blob/b4a1cefd51c2172dd90fb99e93880e3e3445de63/algos/searching/001_linear_search.go#L1C1-L10C2
+https://github.com/Evergreenies/go-algorithms/blob/b4a1cefd51c2172dd90fb99e93880e3e3445de63/algos/searching/001_linear_search.go#L1-L10
