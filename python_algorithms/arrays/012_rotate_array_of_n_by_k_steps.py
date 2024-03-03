@@ -28,6 +28,9 @@ def rotate_array_of_n_by_k_steps(arr: list[Any], k: int) -> list[Any] | None:
 
 
 def rotate_array_of_n_by_k_steps_reverse(arr: list[Any], k: int) -> list[Any]:
+    if k <= 0:
+        return arr
+
     def reverse(arr: list[Any], start: int, end: int) -> None:
         while start <= end:
             arr[start], arr[end] = arr[end], arr[start]
@@ -54,6 +57,12 @@ if __name__ == "__main__":
         3,
         4,
     ]
+    assert rotate_array_of_n_by_k_steps([1, 2, 3, 4, 5, 6], 3) == [4, 5, 6, 1, 2, 3]
+    assert rotate_array_of_n_by_k_steps([1, 2, 3, 4, 5, 6], 0) == [1, 2, 3, 4, 5, 6]
+    assert rotate_array_of_n_by_k_steps([1, 2, 3, 4, 5, 6], 1) == [6, 1, 2, 3, 4, 5]
+    assert rotate_array_of_n_by_k_steps([1, 2, 3, 4, 5, 6], 7) == [6, 1, 2, 3, 4, 5]
+    assert rotate_array_of_n_by_k_steps([1, 2, 3, 4, 5, 6], 6) == [1, 2, 3, 4, 5, 6]
+
     assert rotate_array_of_n_by_k_steps_reverse([1, 2, 3, 4, 5, 6, 7], 3) == [
         5,
         6,
@@ -62,4 +71,44 @@ if __name__ == "__main__":
         2,
         3,
         4,
+    ]
+    assert rotate_array_of_n_by_k_steps_reverse([1, 2, 3, 4, 5, 6], 3) == [
+        4,
+        5,
+        6,
+        1,
+        2,
+        3,
+    ]
+    assert rotate_array_of_n_by_k_steps_reverse([1, 2, 3, 4, 5, 6], 0) == [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+    ]
+    assert rotate_array_of_n_by_k_steps_reverse([1, 2, 3, 4, 5, 6], 1) == [
+        6,
+        1,
+        2,
+        3,
+        4,
+        5,
+    ]
+    assert rotate_array_of_n_by_k_steps_reverse([1, 2, 3, 4, 5, 6], 7) == [
+        6,
+        1,
+        2,
+        3,
+        4,
+        5,
+    ]
+    assert rotate_array_of_n_by_k_steps_reverse([1, 2, 3, 4, 5, 6], 6) == [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
     ]
