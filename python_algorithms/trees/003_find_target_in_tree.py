@@ -48,6 +48,18 @@ def find_target_in_tree_by_bfs(root: Node, target: Any) -> bool:
     return False
 
 
+def find_target_in_tree_by_dfs_recursie(root: Node | None, target: Any) -> bool:
+    if root is None:
+        return False
+
+    if root.value == target:
+        return True
+
+    return find_target_in_tree_by_dfs_recursie(
+        root.left, target
+    ) or find_target_in_tree_by_dfs_recursie(root.right, target)
+
+
 if __name__ == "__main__":
     _root = Node("a", Node("b", Node("d"), Node("e")), Node("c", None, Node("f")))
     assert find_target_in_tree_by_dfs(_root, "a") is True
@@ -59,3 +71,8 @@ if __name__ == "__main__":
     assert find_target_in_tree_by_bfs(_root, "e") is True
     assert find_target_in_tree_by_bfs(_root, "f") is True
     assert find_target_in_tree_by_bfs(_root, "z") is False
+
+    assert find_target_in_tree_by_dfs_recursie(_root, "a") is True
+    assert find_target_in_tree_by_dfs_recursie(_root, "e") is True
+    assert find_target_in_tree_by_dfs_recursie(_root, "f") is True
+    assert find_target_in_tree_by_dfs_recursie(_root, "z") is False
