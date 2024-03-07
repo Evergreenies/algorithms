@@ -30,7 +30,20 @@ def find_min_value_dfs(root: Node | None) -> int | None | float:
     return min_value
 
 
+def find_min_value_dfs_recursive(root: Node | None) -> int | float:
+    if root is None:
+        return math.inf
+
+    left = find_min_value_dfs_recursive(root.left)
+    right = find_min_value_dfs_recursive(root.right)
+
+    return min(root.value, left, right)
+
+
 if __name__ == "__main__":
     assert find_min_value_dfs(None) == math.inf
     _root = Node(5, Node(11, Node(4), Node(15)), Node(3, right=Node(12)))
     assert find_min_value_dfs(_root) == 3
+
+    assert find_min_value_dfs_recursive(_root) == 3
+    assert find_min_value_dfs_recursive(None) == math.inf
