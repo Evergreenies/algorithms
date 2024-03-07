@@ -6,6 +6,7 @@ For example, given [6, 1, 3, 3, 3, 6, 6], return 1. Given [13, 19, 13, 13], retu
 
 Do this in O(N) time and O(1) space.
 """
+from collections import defaultdict
 
 
 def find_unique_number(arr: list[int]) -> int:
@@ -17,7 +18,24 @@ def find_unique_number(arr: list[int]) -> int:
     return eliminate_thrice
 
 
+def find_unique_number_dict(arr: list[int]) -> int:
+    dct = defaultdict(int)
+
+    for ele in arr:
+        dct[ele] = dct.get(ele, 0) + 1
+
+    for key, value in dct.items():
+        if value == 1:
+            return key
+
+    return 0
+
+
 if __name__ == "__main__":
     assert find_unique_number([6, 1, 3, 3, 3, 6, 6]) == 1
     assert find_unique_number([13, 19, 13, 13]) == 19
     assert find_unique_number([13, 13, 13]) == 0
+
+    assert find_unique_number_dict([6, 1, 3, 3, 3, 6, 6]) == 1
+    assert find_unique_number_dict([13, 19, 13, 13]) == 19
+    assert find_unique_number_dict([13, 13, 13]) == 0
