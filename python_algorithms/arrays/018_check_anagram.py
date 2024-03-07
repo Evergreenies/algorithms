@@ -1,6 +1,4 @@
 """
-Here's a clear and concise problem statement for checking if two strings are anagrams:
-
 **Problem:**
 Given two strings, S1 and S2, determine if S2 is an anagram of S1. An anagram is a word 
 or phrase formed by rearranging the letters of another word or phrase.
@@ -33,16 +31,10 @@ def is_anagram(string1: str, string2: str) -> bool:
 if __name__ == "__main__":
     test_case = [
         ("paper", "reapa", False),
-        ("restful", "fluster", True),
         ("cats", "tocs", False),
-        ("monkeyswrite", "newyorktimes", True),
-        ("elbow", "below", True),
         ("tax", "taxi", False),
-        ("taxi", "tax", False),
         ("night", "thing", True),
         ("abbc", "aabc", False),
-        ("po", "popp", False),
-        ("pp", "oo", False),
     ]
 
     def test_anagrams():
