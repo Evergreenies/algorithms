@@ -21,9 +21,9 @@ following transition probabilities:
 One instance of running this Markov chain might produce 
 { 'a': 3012, 'b': 1656, 'c': 332 }
 """
-from random import random
+from random import choice, random
 from collections import defaultdict
-from typing import Any, Union
+from typing import Any, DefaultDict, Union
 
 
 class GraphDirectedWeighted:
@@ -75,6 +75,26 @@ def markov_chain(transitions: list[tuple], source: Any, steps: int) -> dict:
     return visited
 
 
+def simulated_markov_chain(
+    transitions: list[tuple], start: Any, steps: int
+) -> DefaultDict:
+    visited = defaultdict(int)
+    visited[start] += 1
+
+    current_node = start
+    while steps > 0:
+        next_node, _, _ = choice(transitions)
+
+        if current_node == next_node:
+            continue
+
+        visited[next_node] += 1
+        current_node = next_node
+        steps -= 1
+
+    return visited
+
+
 if __name__ == "__main__":
     _edges = [
         ("a", "a", 0.9),
@@ -88,3 +108,4 @@ if __name__ == "__main__":
         ("c", "c", 0.5),
     ]
     print(markov_chain(_edges, "a", 5000))
+    print(simulated_markov_chain(_edges, "a", 5000))
