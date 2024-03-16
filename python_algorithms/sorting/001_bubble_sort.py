@@ -26,7 +26,7 @@ def bubble_sort(arr: list[int]) -> list[int]:
     length = len(arr) - 1
     for index_i in range(length):
         swapped = False
-        for index_j in range(length - index_i):
+        for index_j in range(length - index_i - 1):
             if arr[index_j] > arr[index_j + 1]:
                 arr[index_j], arr[index_j + 1] = arr[index_j + 1], arr[index_j]
                 swapped = True
