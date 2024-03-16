@@ -28,15 +28,15 @@ def insertion_sort(arr: list[int]) -> list[int]:
     if not arr:
         return []
 
-    length = len(arr)
-    for index in range(1, length):
-        element = arr[index]
+    for index in range(1, len(arr)):
+        current_element = arr[index]
         prev_index = index - 1
-        while prev_index >= 0 and element < arr[prev_index]:
+
+        while prev_index >= 0 and current_element < arr[prev_index]:
             arr[prev_index + 1] = arr[prev_index]
             prev_index -= 1
 
-        arr[prev_index + 1] = element
+        arr[prev_index + 1] = current_element
 
     return arr
 
