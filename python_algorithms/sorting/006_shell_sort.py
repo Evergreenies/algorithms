@@ -17,7 +17,6 @@ def shell_sort(arr: list[int]) -> list[int]:
                 shift_index -= gap
 
             arr[shift_index] = current_element
-
         gap //= 2
 
     return arr
