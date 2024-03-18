@@ -27,8 +27,8 @@ def find_winning_start(dictionary: set[str]) -> set[str]:
         for word in starting_char_freq[starting_char]:
             if len(word) % 2 != 0:
                 break
-            else:
-                winning_start.add(starting_char)
+        else:
+            winning_start.add(starting_char)
 
     return winning_start
 
