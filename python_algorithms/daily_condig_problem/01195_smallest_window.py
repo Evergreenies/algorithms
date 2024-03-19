@@ -1,3 +1,12 @@
+"""
+Given a string, find the length of the smallest window that contains 
+every distinct character. Characters may appear more than once in the window.
+
+For example, given "jiujitsu", you should return 5, corresponding to 
+the final five letters.
+"""
+
+
 def smallest_window(string: str) -> int:
     char_count = {}  # Hash table to store character frequencies within the window
     unique_chars = len(set(string))  # Number of distinct characters
