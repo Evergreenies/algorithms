@@ -20,7 +20,7 @@ class CountMap:
     def plus(self, key: Any) -> None:
         self.count_map[key] += 1
 
-        if self.count_map[key] < self.count_map.get(self.max_key, math.inf):
+        if self.count_map[key] < self.count_map.get(self.min_key, math.inf):
             self.min_key = key
 
         if self.count_map[key] > self.count_map.get(self.max_key, -math.inf):
