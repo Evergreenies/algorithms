@@ -48,9 +48,8 @@ class Stack:
             for value in self.stack:
                 if value > self.max_value:
                     self.max_value = value
-                    break
 
-        return element
+        return self.top
 
     def max(self) -> int:
         if self.size == 0:
@@ -74,6 +73,6 @@ if __name__ == "__main__":
     assert stack.display() == [1, 2, 3, 4]
     assert stack.max() == 4
 
-    assert stack.pop() == 4
     assert stack.pop() == 3
+    assert stack.pop() == 2
     assert stack.display() == [1, 2]
