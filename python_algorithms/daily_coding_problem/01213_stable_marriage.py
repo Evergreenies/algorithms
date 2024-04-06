@@ -28,7 +28,7 @@ current partners.
 
 def stable_marriage(
     men_preferences: dict[str, list], women_preferences: dict[str, list]
-) -> dict[str, list]:
+) -> dict[str, str]:
     men = list(set(men_preferences.keys()))
     matches = {}
 
