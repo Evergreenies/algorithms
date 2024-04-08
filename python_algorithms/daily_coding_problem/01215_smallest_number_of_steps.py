@@ -28,5 +28,6 @@ def min_steps_to_one(num: int) -> int:
 
 
 if __name__ == "__main__":
+    # TODO: Pending correction
     assert min_steps_to_one(100) == 4
     assert min_steps_to_one(64) == 4
