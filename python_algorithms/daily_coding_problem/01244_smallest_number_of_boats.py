@@ -36,5 +36,4 @@ def num_of_boats_needed(weights: list[int], limit: int) -> int:
 
 if __name__ == "__main__":
     assert bubble_sort([5, 6, 3, 2, 7, 4, 0]) == [7, 6, 5, 4, 3, 2, 0]
-    print(num_of_boats_needed([100, 200, 150, 80], 200))
     assert num_of_boats_needed([100, 200, 150, 80], 200) == 3
