@@ -18,18 +18,20 @@ the elements themselves.
 """
 
 
-def two_sum(arr: list[int], target: int) -> tuple[int, int] | tuple:
+def two_sum(arr: list[int], target: int) -> tuple[int, int] | None:
     if not arr:
-        return ()
+        return
 
     visited = {}
     for index, num in enumerate(arr):
         complement = target - num
-        if complement in visited:
-            return (visited[complement], index)
+
+        if visited.get(complement) is not None:
+            return visited[complement], index
+
         visited[num] = index
 
-    return ()
+    return
 
 
 if __name__ == "__main__":
