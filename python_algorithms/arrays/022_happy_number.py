@@ -1,6 +1,4 @@
 # Happy number
-from pkg_resources import working_set
-
 
 def is_happy(num: int) -> bool:
     visited = set()
