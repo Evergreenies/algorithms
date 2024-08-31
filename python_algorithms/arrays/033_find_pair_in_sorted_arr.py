@@ -26,4 +26,6 @@ def find_pairs(arr: list[int], target: int) -> tuple | None:
         right += 1
 
 
-print(find_pairs([2, 3, 4, 5, 6, 7, 8, 10, 14, 16], 10))
+print(
+    find_pairs([2, 3, 4, 5, 6, 7, 8, 10, 14, 16], 10)
+)
