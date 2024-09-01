@@ -14,7 +14,7 @@ def duplicate_count(arr: list[int]) -> None:
             while arr[index_j] == arr[index]:
                 index_j += 1
 
-            print(f"{arr[index]} repeated {index_j - index} times")
+            print(f"{arr[index]} repeated {index_j - index} times.")
             index = index_j - 2
 
         index += 1
