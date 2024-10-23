@@ -4,7 +4,9 @@ Given a 32-bit positive integer N, determine whether it is a power of four in fa
 
 
 def is_power_of_four(n: int) -> bool:
+    # check if bit representation has only one bit as `1`
     if n > 0 and (n & (n - 1)) == 0:
+        # check if `1` bit is in odd position
         return (n & 0x55555555) != 0
 
     return False
